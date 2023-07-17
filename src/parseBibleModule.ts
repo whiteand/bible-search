@@ -42,7 +42,10 @@ export async function parseBibleModule(
     limit: 1e9,
   }).value;
 
-  const tempFilePath = await Deno.makeTempFile();
+  const tempFilePath = await Deno.makeTempFile().catch((error) => {
+    console.error("Cannot create temporary file: " + (error as any)?.message);
+    throw error;
+  });
 
   await Deno.writeFile(tempFilePath, requestBody);
 
