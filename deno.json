@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-write --allow-read --unstable --allow-net --watch main.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.unstable", "dom"]
+  },
+  "imports": {
+    "oak": "https://deno.land/x/oak@v11.1.0/mod.ts",
+    "oakCors": "https://deno.land/x/cors@v1.2.2/mod.ts",
+    "sqlite": "https://deno.land/x/sqlite@v3.7.2/mod.ts"
+  }
+}
